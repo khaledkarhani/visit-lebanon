@@ -6,7 +6,7 @@ import byblos from '../assets/byblos(jbeil).jpeg';
 import jeita from '../assets/jeita-grotto.jpg';
 import tyre from '../assets/saida.jpeg';
 import cedars from '../assets/cedars.jpg';
-import beirut from '../assets/beirutN.jpeg';
+import beirut from '../assets/beirut.jpeg';
 
 
 const destinations = [
@@ -33,7 +33,7 @@ const filters = [
   { label: 'City', value: 'city' },
 ];
 
-function Destinations() {
+function Destination() {
 
   // STATE: which filter is currently active. Starts as 'all'.
   const [activeFilter, setActiveFilter] = useState('all');
@@ -46,6 +46,7 @@ function Destinations() {
 
   return (
     <div>
+     
       {/* PAGE BANNER */}
       <div className="page-banner" style={{ backgroundImage: `url(${beirut})` }}>
         <div className="page-banner-overlay">
@@ -101,4 +102,4 @@ function Destinations() {
   );
 }
 
-export default Destinations;
+export default Destination;
