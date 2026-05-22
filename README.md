@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Visit Lebanon 🌲
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive tourism website for Lebanon, built with React. It showcases the country's
+top destinations, cuisine, and culture across four pages.
 
-## Available Scripts
+🔗 **Live Demo:** (https://visit-lebanon.vercel.app/)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📖 Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Visit Lebanon is a frontend web application that highlights the beauty of the Lebanese country from its culture to its weather. It was built as a CSCI390 project to practice modern frontend development with React.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## ✨ Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Four pages: Home, Destinations, Cuisine, and About
+- Responsive design that works on desktop and mobile
+- Animated statistics that count up on load
+- Filterable destinations grid (Historical / Nature / Coastal / City)
+- Image hover effects on the cuisine gallery
+- Expandable accordion for the mezze dining culture section
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠️ Technologies Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **React** — frontend framework (components, props, hooks)
+- **React Router** — page navigation
+- **Bootstrap 5** — layout and responsive grid
+- **Bootstrap Icons** — icons
+- **Google Fonts** — Cormorant Garamond & Jost
+- **Custom CSS** — color palette and styling
+- Deployed on **Vercel**
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🚀 Setup Instructions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To run this project locally:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+# 1. Clone the repository
+git clone https://github.com/khaledkarhani/visit-lebanon.git
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# 2. Move into the project folder
+cd visit-lebanon
 
-## Learn More
+# 3. Install dependencies
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# 4. Start the development server
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The app will open at `http://localhost:3000`.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📸 Screenshots
 
-### Analyzing the Bundle Size
+### Home Page
+![Home](screenshots/Home.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Destinations Page
+![Destinations](screenshots/Destinations.png)
 
-### Making a Progressive Web App
+### Cuisine Page
+![Cuisine](screenshots/Cuisine.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### About Page
+![About](screenshots/About.png)
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 👤 Author
 
-### Deployment
+[Khaled Maamoun Karhani]
+[CSCI 390 / LIU]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🙏 Credits
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Images: [Unsplash]
+- Icons: Bootstrap Icons
+- Fonts: Google Fonts
+- Learning reference: W3Schools
