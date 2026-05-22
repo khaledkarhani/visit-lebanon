@@ -1,13 +1,483 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* =============================================================
+   style.css – Visit Lebanon Tourism Website
+   Author: Lebanon Tourism Project
+   Description: Custom CSS on top of Bootstrap 5
+   Technique references: https://www.w3schools.com/css/
+============================================================= */
+
+
+/* ---------------------------------------------------------------
+   CSS VARIABLES (Custom color palette)
+   Source: https://www.w3schools.com/css/css3_variables.asp
+--------------------------------------------------------------- */
+:root {
+  --gold:        #C9993A;       /* Lebanese gold accent */
+  --dark-cedar:  #1A2B1F;       /* Deep green (cedar tree) */
+  --cream:       #F8F4EE;       /* Warm off-white */
+  --text-dark:   #1c1c1c;
+  --text-muted:  #777;
+  --nav-bg:      rgba(15, 25, 15, 0.92); /* Semi-transparent dark */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/* ---------------------------------------------------------------
+   GLOBAL / BASE STYLES
+--------------------------------------------------------------- */
+/* Source: https://www.w3schools.com/css/css_font.asp */
+body {
+  font-family: 'Jost', sans-serif;
+  color: var(--text-dark);
+  background: #fff;
+  overflow-x: hidden;           /* Prevent horizontal scroll */
+}
+
+/* Smooth scrolling for anchor links */
+html { scroll-behavior: smooth; }
+
+/* Heading font override */
+h1, h2, h3, h4, h5 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+}
+
+
+/* ---------------------------------------------------------------
+   UTILITY CLASSES
+--------------------------------------------------------------- */
+.text-gold  { color: var(--gold) !important; }
+.bg-gold    { background-color: var(--gold) !important; color: #fff !important; }
+
+/* Gold button – custom style extending Bootstrap */
+/* Source: https://www.w3schools.com/bootstrap5/bootstrap_buttons.php */
+.btn-gold {
+  background-color: var(--gold);
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  padding: 0.55rem 1.5rem;
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 0.05em;
+  transition: background 0.3s;
+}
+.btn-gold:hover {
+  background-color: #a67c22;
+  color: #fff;
+}
+
+.bg-light-cream { background-color: var(--cream); }
+.bg-dark-cedar  { background-color: var(--dark-cedar); }
+
+
+/* ---------------------------------------------------------------
+   SECTION LABELS / TAGS
+--------------------------------------------------------------- */
+.section-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 2px;
+  margin-bottom: 10px;
+}
+.section-tag.light { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.4); }
+
+.section-heading {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.section-text { line-height: 1.9; color: #444; }
+
+
+/* ---------------------------------------------------------------
+   NAVBAR
+   Source: https://www.w3schools.com/bootstrap5/bootstrap_navbar.php
+--------------------------------------------------------------- */
+#mainNav {
+  background: var(--nav-bg);
+  backdrop-filter: blur(8px);       /* Glassmorphism effect */
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.3s;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+/* Scrolled state – set by JS */
+#mainNav.scrolled {
+  background: rgba(15, 25, 15, 0.98);
+  padding: 0.5rem 0;
+}
+
+.navbar-brand { font-size: 1.3rem; letter-spacing: 0.03em; }
+
+.nav-link {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 4px;
+  transition: color 0.2s;
+}
+.nav-link:hover, .nav-link.active { color: var(--gold) !important; }
+
+
+/* ---------------------------------------------------------------
+   HERO CAROUSEL
+   Source: https://www.w3schools.com/bootstrap5/bootstrap_carousel.php
+--------------------------------------------------------------- */
+#hero { padding-top: 0; }
+
+.hero-img {
+  height: 100vh;                    /* Full viewport height */
+  object-fit: cover;                /* Crop image to fill */
+  object-position: center;
+  filter: brightness(0.55);         /* Darken for text readability */
+}
+
+/* Gradient overlay at bottom of each slide */
+.carousel-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-caption {
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 80%;
+  z-index: 2;
+}
+
+.hero-sub {
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  font-family: 'Cormorant Garamond', serif;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  text-shadow: 2px 4px 20px rgba(0,0,0,0.4);
+}
+
+.hero-desc {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 1.5rem;
+}
+
+/* Carousel dots override */
+.carousel-indicators [data-bs-target] {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.5);
+  border: none;
+}
+.carousel-indicators .active { background-color: var(--gold); }
+
+
+/* ---------------------------------------------------------------
+   STATS STRIP
+--------------------------------------------------------------- */
+.stats-strip {
+  background: var(--dark-cedar);
+  color: #fff;
+}
+.stat-num {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 0;
+}
+.stat-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin: 0;
+}
+
+
+/* ---------------------------------------------------------------
+   INTRO SECTION + FLOATING BADGE
+--------------------------------------------------------------- */
+.section-intro { padding: 5rem 0; }
+
+/* Floating badge on image */
+.intro-img-wrap { position: relative; }
+.float-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: #fff;
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+
+/* ---------------------------------------------------------------
+   DESTINATION CARDS
+   Source: https://www.w3schools.com/bootstrap5/bootstrap_cards.php
+--------------------------------------------------------------- */
+.dest-card { border-radius: 8px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+.dest-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.12) !important; }
+
+.dest-img { height: 200px; object-fit: cover; }
+
+/* Larger card variant for destinations page */
+.dest-card-lg { border-radius: 8px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+.dest-card-lg:hover { transform: translateY(-5px); }
+.dest-img-lg { height: 220px; object-fit: cover; }
+
+
+/* ---------------------------------------------------------------
+   WHY LEBANON BOXES
+--------------------------------------------------------------- */
+.why-box {
+  padding: 2rem 1.5rem;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 8px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.why-box:hover { border-color: var(--gold); box-shadow: 0 8px 25px rgba(201,153,58,0.1); }
+
+.why-icon {
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+
+/* ---------------------------------------------------------------
+   TESTIMONIAL CAROUSEL
+--------------------------------------------------------------- */
+.testimonial-quote {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  max-width: 650px;
+  margin: 0 auto 1rem;
+  color: rgba(255,255,255,0.9);
+}
+.testimonial-author {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+
+/* ---------------------------------------------------------------
+   NEWSLETTER SECTION
+--------------------------------------------------------------- */
+.section-newsletter { background: var(--cream); }
+
+.newsletter-form .form-control { border-radius: 2px 0 0 2px; border: 1px solid #ccc; }
+.newsletter-form .btn { border-radius: 0 2px 2px 0; }
+
+
+/* ---------------------------------------------------------------
+   FOOTER
+--------------------------------------------------------------- */
+.footer { background: #0f1a0f; color: rgba(255,255,255,0.7); }
+
+.footer-brand { font-size: 1.2rem; font-family: 'Cormorant Garamond', serif; color: #fff; font-weight: 600; }
+.footer-heading { color: var(--gold); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.15em; font-family: 'Jost', sans-serif; }
+.footer-text { font-size: 0.88rem; line-height: 1.7; }
+.footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem; display: block; padding: 2px 0; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-hr { border-color: rgba(255,255,255,0.1); }
+.footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+
+/* Social icons */
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  color: rgba(255,255,255,0.6);
+  margin-right: 8px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.social-icons a:hover { background: var(--gold); border-color: var(--gold); color: #fff; }
+
+
+/* ---------------------------------------------------------------
+   PAGE BANNER (inner pages)
+--------------------------------------------------------------- */
+.page-banner {
+  position: relative;
+  height: 55vh;
+  min-height: 350px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+}
+.page-banner-overlay {
+  width: 100%;
+  padding: 3rem 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 70%, transparent 100%);
+}
+.page-banner-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.page-banner-sub { color: rgba(255,255,255,0.8); font-size: 1rem; }
+
+/* Breadcrumb override for dark banner */
+.breadcrumb-item + .breadcrumb-item::before { color: rgba(255,255,255,0.5); }
+
+
+/* ---------------------------------------------------------------
+   DESTINATIONS PAGE – Filter buttons
+--------------------------------------------------------------- */
+#destTabs .nav-link {
+  color: var(--text-dark);
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  margin: 3px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all 0.2s;
+}
+#destTabs .nav-link.active, #destTabs .nav-link:hover {
+  background: var(--gold);
+  color: #fff;
+  border-color: var(--gold);
+}
+
+/* Hidden destination card (filter JS) */
+.dest-item.hidden { display: none !important; }
+
+
+/* ---------------------------------------------------------------
+   MAP SECTION
+--------------------------------------------------------------- */
+.map-container { max-height: 400px; }
+.map-container iframe { display: block; }
+
+
+/* ---------------------------------------------------------------
+   CUISINE PAGE – Food Cards with hover overlay
+   Source: https://www.w3schools.com/css/css3_transitions.asp
+--------------------------------------------------------------- */
+.food-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.food-img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;     /* Zoom on hover */
+}
+.food-card:hover .food-img { transform: scale(1.08); }
+
+/* Overlay text that appears on hover */
+.food-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 43, 31, 0.88);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s;            /* Fade in */
+}
+.food-card:hover .food-overlay { opacity: 1; }
+
+.food-overlay h5 { color: var(--gold); margin-bottom: 0.5rem; font-size: 1.2rem; }
+.food-overlay p  { font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.85); }
+
+/* Label bar at bottom of card */
+.food-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(201,153,58,0.9);
+  color: #fff;
+  text-align: center;
+  padding: 0.4rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+
+/* ---------------------------------------------------------------
+   CUISINE EXPERIENCE CARDS
+--------------------------------------------------------------- */
+.exp-card {
+  border: 1px solid #e8e3da;
+  border-radius: 8px;
+  background: #fff;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+.exp-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-color: var(--gold); }
+.exp-icon { font-size: 2rem; color: var(--gold); margin-bottom: 1rem; }
+
+
+
+
+/* Form controls override */
+.form-control:focus, .form-select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 0.2rem rgba(201,153,58,0.15);
+}
+
+
+/* ---------------------------------------------------------------
+   RESPONSIVE TWEAKS
+   Source: https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+--------------------------------------------------------------- */
+
+/* Tablet and down */
+@media (max-width: 991px) {
+  .hero-title { font-size: 3rem; }
+  .float-badge { bottom: -10px; right: -5px; }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .hero-img { height: 100svh; }
+  .hero-caption { width: 95%; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-desc { font-size: 0.85rem; }
+  .intro-img-wrap { margin-top: 2rem; }
+  .float-badge { position: static; margin-top: 1rem; justify-content: center; }
+  .page-banner { height: 45vh; }
 }

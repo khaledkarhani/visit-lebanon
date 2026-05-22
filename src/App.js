@@ -1,10 +1,14 @@
-// App.js — the root component of our Visit Lebanon site
+
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <h1 className="text-center text-gold mt-5">Visit Lebanon</h1>
-      <p className="text-center">React rebuild — setup working ✅</p>
+      <Navbar />
+       <h1 className="text-center text-gold" style={{ marginTop: '120px' }}>
+         Visit Lebanon
+        </h1>
+      <p className="text-center">Navbar component working ✅</p>
     </div>
   );
 }
