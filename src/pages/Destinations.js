@@ -46,7 +46,7 @@ function Destination() {
 
   return (
     <div>
-     
+      
       {/* PAGE BANNER */}
       <div className="page-banner" style={{ backgroundImage: `url(${beirut})` }}>
         <div className="page-banner-overlay">
