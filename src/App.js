@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Destinations from './pages/Destinations';
 import Cuisine from './pages/Cuisine';
 import About from './pages/About';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         <Route path="/cuisine" element={<Cuisine />} />
         <Route path="/about" element={<About />} />
       </Routes>
+
+      <Footer />
     </BrowserRouter>
   );
 }
