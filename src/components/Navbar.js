@@ -1,13 +1,15 @@
 
+import { Link } from 'react-router-dom';
+
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div className="container">
       
-        <a className="navbar-brand fw-bold" href="/">
-          <i className="bi bi-tree-fill me-2 text-success"></i>
-          Visit <span className="text-gold">Lebanon</span>
-        </a>
+        <Link className="navbar-brand fw-bold" to="/">
+        <i className="bi bi-tree-fill me-2 text-success"></i>
+        Visit <span className="text-gold">Lebanon</span>
+        </Link>
 
       
         <button
@@ -22,10 +24,10 @@ function Navbar() {
      
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item"><a className="nav-link" href="/">Home</a></li>
-            <li className="nav-item"><a className="nav-link" href="/destinations">Destinations</a></li>
-            <li className="nav-item"><a className="nav-link" href="/cuisine">Cuisine</a></li>
-            <li className="nav-item"><a className="nav-link" href="/about">About</a></li>
+            <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/destinations">Destinations</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/cuisine">Cuisine</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/about">About</Link></li>
           </ul>
         </div>
       </div>
