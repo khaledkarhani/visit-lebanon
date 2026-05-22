@@ -4,6 +4,7 @@ import Stats from "../components/Stats";
 import Intro from "../components/Intro";
 import WhyLebanon from "../components/WhyLebanon";
 import DestinationPreview from "./DestinationPreview";
+import Testimonials from "../components/Testimonials";
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
       <Intro />
       <WhyLebanon />
       <DestinationPreview />
+      <Testimonials />
     </div>
   );
 }
