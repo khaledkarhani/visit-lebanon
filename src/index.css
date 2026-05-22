@@ -474,10 +474,27 @@ h1, h2, h3, h4, h5 {
 /* Mobile */
 @media (max-width: 576px) {
   .hero-img { height: 100svh; }
-  .hero-caption { width: 95%; }
+  .hero-caption { 
+        width: 90%;
+       padding: 0 0.5rem; 
+      }
   .hero-title { font-size: 2.2rem; }
   .hero-desc { font-size: 0.85rem; }
   .intro-img-wrap { margin-top: 2rem; }
   .float-badge { position: static; margin-top: 1rem; justify-content: center; }
   .page-banner { height: 45vh; }
+}
+/* Prevent horizontal overflow / white strip */
+.carousel,
+.carousel-inner,
+.carousel-item {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Override Bootstrap's default caption left/right so our centering works */
+.hero-caption {
+  left: 50% !important;
+  right: auto !important;
+  max-width: 100%;
 }
