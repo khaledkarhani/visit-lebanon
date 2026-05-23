@@ -1,54 +1,40 @@
-/* =============================================================
-   style.css – Visit Lebanon Tourism Website
-   Author: Lebanon Tourism Project
-   Description: Custom CSS on top of Bootstrap 5
-   Technique references: https://www.w3schools.com/css/
-============================================================= */
 
 
-/* ---------------------------------------------------------------
-   CSS VARIABLES (Custom color palette)
-   Source: https://www.w3schools.com/css/css3_variables.asp
---------------------------------------------------------------- */
+
+
 :root {
-  --gold:        #C9993A;       /* Lebanese gold accent */
-  --dark-cedar:  #1A2B1F;       /* Deep green (cedar tree) */
-  --cream:       #F8F4EE;       /* Warm off-white */
+  --gold:        #C9993A;      
+  --dark-cedar:  #1A2B1F;      
+  --cream:       #F8F4EE;      
   --text-dark:   #1c1c1c;
   --text-muted:  #777;
-  --nav-bg:      rgba(15, 25, 15, 0.92); /* Semi-transparent dark */
+  --nav-bg:      rgba(15, 25, 15, 0.92); 
 }
 
 
-/* ---------------------------------------------------------------
-   GLOBAL / BASE STYLES
---------------------------------------------------------------- */
-/* Source: https://www.w3schools.com/css/css_font.asp */
+
 body {
   font-family: 'Jost', sans-serif;
   color: var(--text-dark);
   background: #fff;
-  overflow-x: hidden;           /* Prevent horizontal scroll */
+  overflow-x: hidden;          
 }
 
-/* Smooth scrolling for anchor links */
+
 html { scroll-behavior: smooth; }
 
-/* Heading font override */
+
 h1, h2, h3, h4, h5 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 700;
 }
 
 
-/* ---------------------------------------------------------------
-   UTILITY CLASSES
---------------------------------------------------------------- */
+
 .text-gold  { color: var(--gold) !important; }
 .bg-gold    { background-color: var(--gold) !important; color: #fff !important; }
 
-/* Gold button – custom style extending Bootstrap */
-/* Source: https://www.w3schools.com/bootstrap5/bootstrap_buttons.php */
+
 .btn-gold {
   background-color: var(--gold);
   color: #fff;
@@ -68,9 +54,7 @@ h1, h2, h3, h4, h5 {
 .bg-dark-cedar  { background-color: var(--dark-cedar); }
 
 
-/* ---------------------------------------------------------------
-   SECTION LABELS / TAGS
---------------------------------------------------------------- */
+
 .section-tag {
   display: inline-block;
   font-size: 0.7rem;
@@ -91,19 +75,16 @@ h1, h2, h3, h4, h5 {
 .section-text { line-height: 1.9; color: #444; }
 
 
-/* ---------------------------------------------------------------
-   NAVBAR
-   Source: https://www.w3schools.com/bootstrap5/bootstrap_navbar.php
---------------------------------------------------------------- */
+
 #mainNav {
   background: var(--nav-bg);
-  backdrop-filter: blur(8px);       /* Glassmorphism effect */
+  backdrop-filter: blur(8px);      
   -webkit-backdrop-filter: blur(8px);
   transition: background 0.3s;
   padding: 1rem 0;
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-/* Scrolled state – set by JS */
+
 #mainNav.scrolled {
   background: rgba(15, 25, 15, 0.98);
   padding: 0.5rem 0;
@@ -121,20 +102,17 @@ h1, h2, h3, h4, h5 {
 .nav-link:hover, .nav-link.active { color: var(--gold) !important; }
 
 
-/* ---------------------------------------------------------------
-   HERO CAROUSEL
-   Source: https://www.w3schools.com/bootstrap5/bootstrap_carousel.php
---------------------------------------------------------------- */
+
 #hero { padding-top: 0; }
 
 .hero-img {
-  height: 100vh;                    /* Full viewport height */
-  object-fit: cover;                /* Crop image to fill */
+  height: 100vh;                   
+  object-fit: cover;                
   object-position: center;
-  filter: brightness(0.55);         /* Darken for text readability */
+  filter: brightness(0.55);        
 }
 
-/* Gradient overlay at bottom of each slide */
+
 .carousel-item::after {
   content: '';
   position: absolute;
@@ -175,7 +153,7 @@ h1, h2, h3, h4, h5 {
   margin-bottom: 1.5rem;
 }
 
-/* Carousel dots override */
+
 .carousel-indicators [data-bs-target] {
   width: 8px; height: 8px;
   border-radius: 50%;
@@ -185,9 +163,7 @@ h1, h2, h3, h4, h5 {
 .carousel-indicators .active { background-color: var(--gold); }
 
 
-/* ---------------------------------------------------------------
-   STATS STRIP
---------------------------------------------------------------- */
+
 .stats-strip {
   background: var(--dark-cedar);
   color: #fff;
@@ -208,12 +184,10 @@ h1, h2, h3, h4, h5 {
 }
 
 
-/* ---------------------------------------------------------------
-   INTRO SECTION + FLOATING BADGE
---------------------------------------------------------------- */
+
 .section-intro { padding: 5rem 0; }
 
-/* Floating badge on image */
+
 .intro-img-wrap { position: relative; }
 .float-badge {
   position: absolute;
@@ -233,24 +207,18 @@ h1, h2, h3, h4, h5 {
 }
 
 
-/* ---------------------------------------------------------------
-   DESTINATION CARDS
-   Source: https://www.w3schools.com/bootstrap5/bootstrap_cards.php
---------------------------------------------------------------- */
 .dest-card { border-radius: 8px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
 .dest-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.12) !important; }
 
 .dest-img { height: 200px; object-fit: cover; }
 
-/* Larger card variant for destinations page */
+
 .dest-card-lg { border-radius: 8px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
 .dest-card-lg:hover { transform: translateY(-5px); }
 .dest-img-lg { height: 220px; object-fit: cover; }
 
 
-/* ---------------------------------------------------------------
-   WHY LEBANON BOXES
---------------------------------------------------------------- */
+
 .why-box {
   padding: 2rem 1.5rem;
   border: 1px solid rgba(0,0,0,0.08);
@@ -266,9 +234,6 @@ h1, h2, h3, h4, h5 {
 }
 
 
-/* ---------------------------------------------------------------
-   TESTIMONIAL CAROUSEL
---------------------------------------------------------------- */
 .testimonial-quote {
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   font-family: 'Cormorant Garamond', serif;
@@ -285,18 +250,14 @@ h1, h2, h3, h4, h5 {
 }
 
 
-/* ---------------------------------------------------------------
-   NEWSLETTER SECTION
---------------------------------------------------------------- */
+
 .section-newsletter { background: var(--cream); }
 
 .newsletter-form .form-control { border-radius: 2px 0 0 2px; border: 1px solid #ccc; }
 .newsletter-form .btn { border-radius: 0 2px 2px 0; }
 
 
-/* ---------------------------------------------------------------
-   FOOTER
---------------------------------------------------------------- */
+
 .footer { background: #0f1a0f; color: rgba(255,255,255,0.7); }
 
 .footer-brand { font-size: 1.2rem; font-family: 'Cormorant Garamond', serif; color: #fff; font-weight: 600; }
@@ -307,7 +268,7 @@ h1, h2, h3, h4, h5 {
 .footer-hr { border-color: rgba(255,255,255,0.1); }
 .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
 
-/* Social icons */
+
 .social-icons a {
   display: inline-flex;
   align-items: center;
@@ -324,9 +285,7 @@ h1, h2, h3, h4, h5 {
 .social-icons a:hover { background: var(--gold); border-color: var(--gold); color: #fff; }
 
 
-/* ---------------------------------------------------------------
-   PAGE BANNER (inner pages)
---------------------------------------------------------------- */
+
 .page-banner {
   position: relative;
   height: 55vh;
@@ -348,13 +307,11 @@ h1, h2, h3, h4, h5 {
 }
 .page-banner-sub { color: rgba(255,255,255,0.8); font-size: 1rem; }
 
-/* Breadcrumb override for dark banner */
+
 .breadcrumb-item + .breadcrumb-item::before { color: rgba(255,255,255,0.5); }
 
 
-/* ---------------------------------------------------------------
-   DESTINATIONS PAGE – Filter buttons
---------------------------------------------------------------- */
+
 #destTabs .nav-link {
   color: var(--text-dark);
   background: #fff;
@@ -372,21 +329,16 @@ h1, h2, h3, h4, h5 {
   border-color: var(--gold);
 }
 
-/* Hidden destination card (filter JS) */
+
 .dest-item.hidden { display: none !important; }
 
 
-/* ---------------------------------------------------------------
-   MAP SECTION
---------------------------------------------------------------- */
+
 .map-container { max-height: 400px; }
 .map-container iframe { display: block; }
 
 
-/* ---------------------------------------------------------------
-   CUISINE PAGE – Food Cards with hover overlay
-   Source: https://www.w3schools.com/css/css3_transitions.asp
---------------------------------------------------------------- */
+
 .food-card {
   position: relative;
   border-radius: 8px;
@@ -400,11 +352,11 @@ h1, h2, h3, h4, h5 {
   height: 230px;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s ease;     /* Zoom on hover */
+  transition: transform 0.5s ease;    
 }
 .food-card:hover .food-img { transform: scale(1.08); }
 
-/* Overlay text that appears on hover */
+
 .food-overlay {
   position: absolute;
   inset: 0;
@@ -417,14 +369,14 @@ h1, h2, h3, h4, h5 {
   padding: 1.5rem;
   text-align: center;
   opacity: 0;
-  transition: opacity 0.4s;            /* Fade in */
+  transition: opacity 0.4s;           
 }
 .food-card:hover .food-overlay { opacity: 1; }
 
 .food-overlay h5 { color: var(--gold); margin-bottom: 0.5rem; font-size: 1.2rem; }
 .food-overlay p  { font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.85); }
 
-/* Label bar at bottom of card */
+
 .food-label {
   position: absolute;
   bottom: 0; left: 0; right: 0;
@@ -438,9 +390,7 @@ h1, h2, h3, h4, h5 {
 }
 
 
-/* ---------------------------------------------------------------
-   CUISINE EXPERIENCE CARDS
---------------------------------------------------------------- */
+
 .exp-card {
   border: 1px solid #e8e3da;
   border-radius: 8px;
@@ -453,17 +403,14 @@ h1, h2, h3, h4, h5 {
 
 
 
-/* Form controls override */
+
 .form-control:focus, .form-select:focus {
   border-color: var(--gold);
   box-shadow: 0 0 0 0.2rem rgba(201,153,58,0.15);
 }
 
 
-/* ---------------------------------------------------------------
-   RESPONSIVE TWEAKS
-   Source: https://www.w3schools.com/css/css_rwd_mediaqueries.asp
---------------------------------------------------------------- */
+
 
 /* Tablet and down */
 @media (max-width: 991px) {
@@ -484,7 +431,7 @@ h1, h2, h3, h4, h5 {
   .float-badge { position: static; margin-top: 1rem; justify-content: center; }
   .page-banner { height: 45vh; }
 }
-/* Prevent horizontal overflow / white strip */
+
 .carousel,
 .carousel-inner,
 .carousel-item {
@@ -492,7 +439,7 @@ h1, h2, h3, h4, h5 {
   overflow: hidden;
 }
 
-/* Override Bootstrap's default caption left/right so our centering works */
+
 .hero-caption {
   left: 50% !important;
   right: auto !important;
